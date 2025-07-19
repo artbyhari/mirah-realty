@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandeep Realty | Your Trusted Real Estate Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #002366;
+            --secondary: #FFD700;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 35, 102, 0.7), rgba(0, 35, 102, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Search Form */
+        .search-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .search-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .search-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background-color: #001a4d;
+        }
+        
+        /* Featured Listings */
+        .featured-listings {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .listing-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .listing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .listing-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .listing-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .listing-card:hover .listing-img img {
+            transform: scale(1.1);
+        }
+        
+        .listing-details {
+            padding: 20px;
+        }
+        
+        .listing-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .listing-address {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .listing-features {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .listing-features span {
+            display: flex;
+            align-items: center;
+            color: var(--gray);
+        }
+        
+        .listing-features i {
+            margin-right: 5px;
+            color: var(--secondary);
+        }
+        
+        .view-details {
+            display: block;
+            text-align: center;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+        
+        .view-details:hover {
+            background-color: var(--light);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Agent Section */
+        .agent {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .agent-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .agent-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .agent-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .agent-info {
+            flex: 1;
+        }
+        
+        .agent-info h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .agent-info h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .agent-info p {
+            margin-bottom: 30px;
+        }
+        
+        .agent-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-item h4 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background-color: var(--secondary);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-top: 3px;
+        }
+        
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #001a4d;
+        }
+        
+        /* Map Section */
+        .map {
+            height: 400px;
+            width: 100%;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .agent-content {
+                flex-direction: column;
+            }
+            
+            .agent-img, .agent-info {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .listing-card {
+                min-width: 100%;
+            }
+            
+            .agent-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Mandeep <span>Realty</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#listings">Listings</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#agent">Agent</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Dream Home Today</h1>
+                <p>With over 10 years of experience in the real estate market, we help you find the perfect property that fits your lifestyle and budget.</p>
+                <div class="hero-btns">
+                    <a href="#listings" class="btn btn-primary">Browse Listings</a>
+                    <a href="#contact" class="btn btn-outline">Contact Agent</a>
+                </div>
+                
+                <!-- Search Form -->
+                <div class="search-form">
+                    <h3>Search Properties</h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="search-location" placeholder="City, Neighborhood, or ZIP">
+                        <select class="form-control" id="search-type">
+                            <option value="">Property Type</option>
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="condo">Condo</option>
+                            <option value="land">Land</option>
+                        </select>
+                        <select class="form-control" id="search-price">
+                            <option value="">Price Range</option>
+                            <option value="0-200000">$0 - $200,000</option>
+                            <option value="200000-400000">$200,000 - $400,000</option>
+                            <option value="400000-600000">$400,000 - $600,000</option>
+                            <option value="600000+">$600,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="search-beds">
+                            <option value="">Bedrooms</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                        </select>
+                        <select class="form-control" id="search-baths">
+                            <option value="">Bathrooms</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                        </select>
+                        <input type="text" class="form-control" id="search-keywords" placeholder="Keywords (pool, garage, etc.)">
+                    </div>
+                    <button class="search-btn" id="search-submit">Search Properties</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Listings -->
+    <section class="featured-listings" id="listings">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Listings</h2>
+                <p>Explore our handpicked selection of premium properties</p>
+            </div>
+            <div class="listings-grid" id="listings-container">
+                <!-- Listings will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive real estate services tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Buying Homes</h3>
+                    <p>We'll help you find your dream home with expert guidance through every step of the buying process.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Selling Homes</h3>
+                    <p>Maximize your home's value with our proven marketing strategies and negotiation expertise.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Rental Properties</h3>
+                    <p>Find the perfect rental property or get expert help leasing out your investment property.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Property Valuation</h3>
+                    <p>Get an accurate market valuation of your property with our comprehensive analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Section -->
+    <section class="agent" id="agent">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Your Agent</h2>
+                <p>Your trusted real estate professional</p>
+            </div>
+            <div class="agent-content">
+                <div class="agent-img">
+                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Mandeep Singh">
+                </div>
+                <div class="agent-info">
+                    <h2>Mandeep Singh</h2>
+                    <h3>Licensed Real Estate Agent</h3>
+                    <p>With over a decade of experience in the real estate industry, Mandeep has helped hundreds of clients find their dream homes and maximize their investments. His deep market knowledge, attention to detail, and commitment to client satisfaction set him apart in the industry.</p>
+                    <p>Mandeep specializes in residential properties, luxury homes, and investment properties. He takes pride in building lasting relationships with his clients and providing personalized service tailored to their unique needs.</p>
+                    <div class="agent-stats">
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>250+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>$100M+</h4>
+                            <p>Properties Sold</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Contact Mandeep</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about us</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Mandeep made the entire home buying process seamless. His knowledge of the market and negotiation skills saved us thousands. We couldn't be happier with our new home!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Home Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"As first-time home sellers, we were nervous about the process. Mandeep guided us every step of the way and got us 15% over asking price. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Home Seller</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I've worked with several agents over the years, but Mandeep is by far the most professional and responsive. He found me the perfect investment property that's already appreciated 20% in value."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Lisa Rodriguez</h4>
+                            <p>Investor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-index="0"></div>
+                    <div class="slider-dot" data-index="1"></div>
+                    <div class="slider-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Office Address</h4>
+                                <p>123 Real Estate Ave, Suite 200<br>Toronto, ON M5V 2H1</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(416) 555-1234</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@mandeeprealty.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <input type="text" class="form-input" placeholder="Your Name" required>
+                        <input type="email" class="form-input" placeholder="Your Email" required>
+                        <input type="tel" class="form-input" placeholder="Your Phone">
+                        <select class="form-input">
+                            <option value="">I'm interested in...</option>
+                            <option value="buying">Buying a home</option>
+                            <option value="selling">Selling a home</option>
+                            <option value="renting">Renting a property</option>
+                            <option value="valuation">Property valuation</option>
+                            <option value="other">Other inquiry</option>
+                        </select>
+                        <textarea class="form-textarea" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2692505416353!2d-79.38924572403972!3d43.6425661711041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68bf33a9b%3A0x15edd8c4de1c7581!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1689878906789!5m2!1sen!2sca" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Mandeep Realty</h3>
+                    <p>Your trusted partner in real estate. We're committed to helping you find the perfect property or get the best value for your current home.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#listings">Listings</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#agent">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Buying Homes</a></li>
+                        <li><a href="#">Selling Homes</a></li>
+                        <li><a href="#">Rental Properties</a></li>
+                        <li><a href="#">Property Valuation</a></li>
+                        <li><a href="#">Investment Properties</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest property listings and market updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mandeep Realty. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                showTestimonial(parseInt(dot.dataset.index));
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+        
+        // MLS API Integration
+        // Note: In a real implementation, you would use a real MLS API with proper authentication
+        // This is a mock implementation using a free real estate API (Realty Mole)
+        
+        // Mock property data (in a real app, this would come from an API)
+        const mockProperties = [
+            {
+                id: 1,
+                address: "123 Maple Street, Toronto, ON",
+                price: 899000,
+                beds: 3,
+                baths: 2,
+                sqft: 1800,
+                type: "house",
+                image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                description: "Beautiful family home in a quiet neighborhood. Recently renovated kitchen and bathrooms."
+            },
+            {
+                id: 2,
+                address: "456 Oak Avenue, Mississauga, ON",
+                price: 1250000,
+                beds: 4,
+                baths: 3,
+                sqft: 2400,
+                type: "house",
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                description: "Luxury home with stunning backyard oasis. Chef's kitchen with high-end appliances."
+            },
+            {
+                id: 3,
+                address: "789 Pine Road, Brampton, ON",
+                price: 650000,
+                beds: 2,
+                baths: 2,
+                sqft: 1200,
+                type: "condo",
+                image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                description: "Modern condo with great amenities. Walking distance to shops and restaurants."
+            },
+            {
+                id: 4,
+                address: "321 Elm Boulevard, Vaughan, ON",
+                price: 3200000,
+                beds: 5,
+                baths: 4,
+                sqft: 3800,
+                type: "house",
+                image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                description: "Estate home on premium lot. Gourmet kitchen, home theater, and pool."
+            },
+            {
+                id: 5,
+                address: "654 Cedar Lane, Markham, ON",
+                price: 750000,
+                beds: 3,
+                baths: 2,
+                sqft: 1500,
+                type: "townhouse",
+                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                description: "Spacious townhouse with finished basement. Great for growing families."
+            },
+            {
+                id: 6,
+                address: "987 Birch Street, Richmond Hill, ON",
+                price: 550000,
+                beds: 1,
+                baths: 1,
+                sqft: 800,
+                type: "condo",
+                image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+                description: "Cozy downtown condo with amazing city views. Perfect for young professionals."
+            }
+        ];
+        
+        // Display listings on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            displayListings(mockProperties);
+        });
+        
+        // Function to display listings
+        function displayListings(properties) {
+            const listingsContainer = document.getElementById('listings-container');
+            listingsContainer.innerHTML = '';
+            
+            if (properties.length === 0) {
+                listingsContainer.innerHTML = '<p class="no-results">No properties match your search criteria.</p>';
+                return;
+            }
+            
+            properties.forEach(property => {
+                const listingCard = document.createElement('div');
+                listingCard.className = 'listing-card';
+                listingCard.innerHTML = `
+                    <div class="listing-img">
+                        <img src="${property.image}" alt="${property.address}">
+                    </div>
+                    <div class="listing-details">
+                        <div class="listing-price">$${property.price.toLocaleString()}</div>
+                        <div class="listing-address">${property.address}</div>
+                        <div class="listing-features">
+                            <span><i class="fas fa-bed"></i> ${property.beds} Beds</span>
+                            <span><i class="fas fa-bath"></i> ${property.baths} Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> ${property.sqft} Sq.Ft</span>
+                        </div>
+                        <a href="#" class="view-details" data-id="${property.id}">View Details</a>
+                    </div>
+                `;
+                listingsContainer.appendChild(listingCard);
+            });
+        }
+        
+        // Search functionality
+        document.getElementById('search-submit').addEventListener('click', () => {
+            const location = document.getElementById('search-location').value.toLowerCase();
+            const type = document.getElementById('search-type').value;
+            const price = document.getElementById('search-price').value;
+            const beds = document.getElementById('search-beds').value;
+            const baths = document.getElementById('search-baths').value;
+            const keywords = document.getElementById('search-keywords').value.toLowerCase();
+            
+            const filteredProperties = mockProperties.filter(property => {
+                // Filter by location (address)
+                if (location && !property.address.toLowerCase().includes(location)) {
+                    return false;
+                }
+                
+                // Filter by property type
+                if (type && property.type !== type) {
+                    return false;
+                }
+                
+                // Filter by price range
+                if (price) {
+                    const [min, max] = price.split('-');
+                    if (max) {
+                        if (property.price < parseInt(min) || property.price > parseInt(max)) {
+                            return false;
+                        }
+                    } else {
+                        // Handle "600000+" case
+                        if (property.price < parseInt(min)) {
+                            return false;
+                        }
+                    }
+                }
+                
+                // Filter by bedrooms
+                if (beds && property.beds < parseInt(beds)) {
+                    return false;
+                }
+                
+                // Filter by bathrooms
+                if (baths && property.baths < parseInt(baths)) {
+                    return false;
+                }
+                
+                // Filter by keywords (description)
+                if (keywords && !property.description.toLowerCase().includes(keywords)) {
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            displayListings(filteredProperties);
+            
+            // Scroll to listings section
+            document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // In a real implementation, you would connect to an actual MLS API
+        // Here's an example of how you might do that with Realty Mole's API (free tier available)
+        /*
+        async function fetchMLSListings() {
+            const apiKey = 'YOUR_REALTY_MOLE_API_KEY';
+            const url = `https://api.realty.mole/listingApi/listings?apiKey=${apiKey}&city=Toronto`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                console.log('MLS Listings:', data);
+                // Process and display the listings
+            } catch (error) {
+                console.error('Error fetching MLS data:', error);
+                // Fall back to mock data
+                displayListings(mockProperties);
+            }
+        }
+        
+        // Call this function instead of using mock data in production
+        // fetchMLSListings();
+        */
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you shortly.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
